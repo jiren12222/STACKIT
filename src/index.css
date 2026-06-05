@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+:root {
+  --background-dark: #0B0F1A;
+  --background-light: #F5F5F0;
+  --accent-teal: #00D4AA;
+  --accent-green: #14F195;
+  --text-light: #F5F5F0;
+  --text-muted: #9CA3AF;
+  --text-muted-dark: #6B7280;
+}
+
+body {
+  @apply bg-dark text-light font-sans;
+}
+
+/* Section Labels */
+.section-label {
+  @apply uppercase text-xs font-bold tracking-widest text-teal;
+  letter-spacing: 0.15em;
+}
+
+/* Cards */
+.card {
+  @apply rounded-2xl border border-white/10 bg-gray-900/50 backdrop-blur-sm hover:shadow-lg hover:shadow-teal/20 transition-all duration-300;
+}
+
+.card-light {
+  @apply rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-6 py-2.5 bg-teal text-dark font-semibold rounded-full shadow-lg hover:shadow-teal/50 hover:shadow-xl transition-all duration-200 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 border border-teal text-teal font-semibold rounded-full hover:bg-teal/10 transition-all duration-200;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 170, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Grid Background */
+.grid-bg {
+  background-image:
+    radial-gradient(circle, rgba(0, 212, 170, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Blur Backdrop */
+.blur-backdrop {
+  backdrop-filter: blur(10px);
+  background-color: rgba(11, 15, 26, 0.8);
+}
+
+/* Code Block Styles */
+pre {
+  @apply rounded-lg bg-gray-950 p-4 overflow-auto;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 14px !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-teal/50 rounded-full hover:bg-teal;
+}
